@@ -28,17 +28,22 @@ app.post("/api/workouts", (req, res) => {
 // adding an exercise
 app.put("/api/workouts/:id", (req, res) => {
     
-
-    db.Workout.updateOne({
+    db.Workout.findOne({
         _id: req.params.id
-    }, { $push: {
-        exercises: req.body
-    }
     }).then(dbWorkout => {
-        res.json(dbWorkout);
-    }).catch(err => {
-        res.json(err);
+        let currentDuration = dbWorkout.totalDuration + req.body.duration;
+        db.Workout.updateOne({
+            _id: req.params.id
+        }, { $push: {
+            exercises: req.body
+        }, totalDuration: currentDuration
+        }).then(dbWorkout => {
+            res.json(dbWorkout);
+        }).catch(err => {
+            res.json(err);
+        });
     });
+
 });
 
 app.get("/api/workouts/range", (req, res) => {
