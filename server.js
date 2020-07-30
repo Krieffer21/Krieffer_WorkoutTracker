@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-require("./models");
+const db = require("./models");
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
