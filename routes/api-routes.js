@@ -15,21 +15,21 @@ app.get("/api/workouts", (req, res) => {
 
 // adds a workout
 app.post("/api/workouts", (req, res) => {
-    db.Workout.create({type: "workout"})
+    db.Workout.create({type: "exercises"})
     .then(results => {
         res.json(results);
     });
 });
 
+// get existing workout add exercise to it 
 app.put("/api/workouts/:id", ({body}, res) => {
     db.Workout.create(body)
-    .then(({_id}) => db.Workout.findOneAndUpdate({}, {$push: {exercises: _id }}, { new:true }))
-    .then(dbWorkout => {
-        res.json(dbWorkout);
+    // .then(({_id}) => db.Workout.findOneAndUpdate({}, {$push: {exercises: _id }}, { new:true }))
+    // .then(dbWorkout => {
+    //     res.json(dbWorkout);
     }).catch(err => {
         res.json(err);
     });
-    
 });
 
 app.get("/api/workouts/range", (req, res) => {

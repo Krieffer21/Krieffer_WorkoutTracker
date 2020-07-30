@@ -37,8 +37,17 @@ const WorkoutSchema = new Schema({
             type: Number,
             unique: false
         }
-    }]
+    }],
+
+    lastUpdated: Date
+
 });
+
+WorkoutSchema.methods.lastUpdatedDate = function() {
+    this.lastUpdated = Date.now();
+  
+    return this.lastUpdated;
+  };  
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
