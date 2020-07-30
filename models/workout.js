@@ -43,6 +43,7 @@ const WorkoutSchema = new Schema({
 
 });
 
+// gets the total duration of the workout
 WorkoutSchema.methods.updateTotalDuration = function() {
     let currentDuration = 0;
 
@@ -53,7 +54,6 @@ WorkoutSchema.methods.updateTotalDuration = function() {
      
     return this.totalDuration;
 };
-
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
