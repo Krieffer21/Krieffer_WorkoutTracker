@@ -1,4 +1,5 @@
 var db = require("../models");
+const { Workout } = require("../models");
 
 module.exports = function(app) {
 
@@ -15,18 +16,26 @@ app.get("/api/workouts", (req, res) => {
 
 // adds a workout
 app.post("/api/workouts", (req, res) => {
-    db.Workout.create({type: "exercises"})
+    const workout = new db.Workout(req.body);
+    workout.updateTotalDuration();
+
+    db.Workout.create(workout)
     .then(results => {
         res.json(results);
     });
 });
 
-// get existing workout add exercise to it 
-app.put("/api/workouts/:id", ({body}, res) => {
-    db.Workout.create(body)
-    // .then(({_id}) => db.Workout.findOneAndUpdate({}, {$push: {exercises: _id }}, { new:true }))
-    // .then(dbWorkout => {
-    //     res.json(dbWorkout);
+// adding an exercise
+app.put("/api/workouts/:id", (req, res) => {
+    
+
+    db.Workout.updateOne({
+        _id: req.params.id
+    }, { $push: {
+        exercises: req.body
+    }
+    }).then(dbWorkout => {
+        res.json(dbWorkout);
     }).catch(err => {
         res.json(err);
     });

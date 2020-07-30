@@ -39,15 +39,21 @@ const WorkoutSchema = new Schema({
         }
     }],
 
-    lastUpdated: Date
+    totalDuration: Number
 
 });
 
-WorkoutSchema.methods.lastUpdatedDate = function() {
-    this.lastUpdated = Date.now();
-  
-    return this.lastUpdated;
-  };  
+WorkoutSchema.methods.updateTotalDuration = function() {
+    let currentDuration = 0;
+
+    for (const d of this.exercises) {
+        currentDuration = currentDuration + d.duration;
+    } 
+    this.totalDuration = currentDuration;
+     
+    return this.totalDuration;
+};
+
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
