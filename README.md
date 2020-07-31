@@ -3,12 +3,12 @@
 # Unit 17 Nosql Homework: Workout Tracker
   This assignment was to create a workout tracker. I was provided with the front end code and wrote the backend code. I used a Mongo database with a Mongoose schema and handled routes with Express.
 
-## api Route
-  The screenshot below is the api route for adding an exercise. It adds the duration of the current exercise to the previous exercises. This will let the user know the total duradtion of their workout. 
+## API Route
+  The screenshot below is the api route for adding an exercise to the users workout. This also calculates the users total workout duration as exercises are added. 
   
 ![api route screenshot](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/api.routes.png)
 
-## html Route
+## HTML Route
   The screenshot of the html routes below shows the paths I created to direct the user accordingly.  
 
 ![html route screenshot](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/html.routes.png)
