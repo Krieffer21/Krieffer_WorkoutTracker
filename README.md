@@ -14,7 +14,8 @@
 ![html route screenshot](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/html.routes.png)
 
 ## Gif
-Deployed link:
+Deployed link: https://evening-headland-40509.herokuapp.com/
+
   In the gifs below it shows the fuctioning application. I can add exercises to a previous workout plan or new exercises to a new workout plan, and view the multiple combined weight of multiple exercises on the stats page.
   
 ![gif 1](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/gif1.gif)
