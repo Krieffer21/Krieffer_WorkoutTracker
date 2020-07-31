@@ -15,7 +15,9 @@
 
 ## Gif
 Deployed link:
-  In the gifs below it shows the fuctioning application. I can add aexercises to a previous workout planor new exercises to a new workout plan, and view the multiple  combined weight of multiple exercises on the stats page.
+  In the gifs below it shows the fuctioning application. I can add exercises to a previous workout plan or new exercises to a new workout plan, and view the multiple combined weight of multiple exercises on the stats page.
   
-![gif 1]()
-![gif]()
+![gif 1](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/gif1.gif)
+![gif 2](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/gif2.gif)
+![gif 3](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/gif3.gif)
+![gif 4](https://github.com/Krieffer21/Krieffer_WorkoutTracker/blob/master/img.readme/gif4.gif)
